@@ -1,0 +1,88 @@
+POST http://localhost:3000/measurements HTTP/1.1
+content-type: application/json
+
+{
+    "name": "BS",
+    "number": 90,
+    "date": "05-23-2023",
+    "single": true
+}
+
+### CREATE 2
+POST http://localhost:3000/measurements HTTP/1.1
+content-type: application/json
+
+{
+    "name": "BP",
+    "upperNumber": 100,
+    "lowerNumber": 80,
+    "date": "05-23-2023",
+    "single": false
+
+}
+
+### CREATE 3
+POST http://localhost:3000/measurements HTTP/1.1
+content-type: application/json
+
+{
+    "name": "DoubleNum",
+    "upperNumber": 120,
+    "lowerNumber": 70,
+    "date": "05-23-2023",
+    "single": false
+}
+
+### CREATE 4
+POST http://localhost:3000/measurements HTTP/1.1
+content-type: application/json
+
+{
+    "name": "SingleNum",
+    "number": 80,
+    "date": "05-23-2023",
+    "single": true
+}
+
+### CREATE 5
+POST http://localhost:3000/measurements HTTP/1.1
+content-type: application/json
+
+{
+    "name": "DoubleNum 2",
+    "upperNumber": 110,
+    "lowerNumber": 60,
+    "date": "05-23-2023",
+    "single": false
+}
+
+### RETRIEVE all documents.
+GET http://localhost:3000/measurements HTTP/1.1
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/measurements/6474596398b6f3c29e147df6 HTTP/1.1
+
+
+### UPDATE one document's year, by ID.
+### Replace the id in the following request with one that exists
+### and update the title, year, and/or language:
+PUT http://localhost:3000/measurements/6474596398b6f3c29e147df6 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "DoubleNum 333",
+    "upperNumber": 110,
+    "lowerNumber": 60,
+    "date": "05-23-2023",
+    "single": false
+}
+
+### DELETE by ID (no response provided)
+DELETE http://localhost:3000/measurements/6474596398b6f3c29e147df6 HTTP/1.1
+
+
+### DELETEs ALL documents!
+DELETE http://localhost:3000/measurements/ HTTP/1.1
+

@@ -1,0 +1,11 @@
+POST http://localhost:3000/contact HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Mi Contact",
+    "email": "panda@gmail.com",
+    "concernType": "Service",
+    "concernDetails": "",
+    "referrer": "Social",
+    "recommend": "Yes" 
+}

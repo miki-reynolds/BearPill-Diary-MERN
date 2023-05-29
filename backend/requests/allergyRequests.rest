@@ -1,0 +1,90 @@
+POST http://localhost:3000/allergies HTTP/1.1
+content-type: application/json
+
+{
+    "name": "ibuprofen",
+    "reactions": "",
+    "notes": "",
+    "current": false,
+    "date": "05-23-2023"
+}
+
+### CREATE 2
+POST http://localhost:3000/allergies HTTP/1.1
+content-type: application/json
+
+{
+    "name": "tylenol",
+    "reactions": "",
+    "notes": "",
+    "current": true,
+    "date": "05-23-2023"
+}
+
+### CREATE 3
+POST http://localhost:3000/allergies HTTP/1.1
+content-type: application/json
+
+{
+    "name": "zinc",
+    "reactions": "",
+    "notes": "",
+    "current": true,
+    "date": "05-23-2023"
+}
+
+### CREATE 4
+POST http://localhost:3000/allergies HTTP/1.1
+content-type: application/json
+
+{
+    "name": "forgot name",
+    "reactions": "",
+    "notes": "",
+    "current": true,
+    "date": "01-01-2022"
+}
+
+### CREATE 5
+POST http://localhost:3000/allergies HTTP/1.1
+content-type: application/json
+
+{
+    "name": "sleep med",
+    "reactions": "",
+    "notes": "",
+    "current": true,
+    "date": "01-09-2022"
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/allergies HTTP/1.1
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/allergies/64745d34e23646650300195a HTTP/1.1
+
+
+### UPDATE one document's year, by ID.
+### Replace the id in the following request with one that exists
+### and update the title, year, and/or language:
+PUT http://localhost:3000/allergies/64745d34e23646650300195a HTTP/1.1
+content-type: application/json
+
+{
+    "name": "sleep med",
+    "reactions": "Stomachace",
+    "notes": "",
+    "current": false,
+    "date": "05-23-2023"
+}
+
+### DELETE by ID (no response provided)
+DELETE http://localhost:3000/allergies/64743164cbe67f9f2627d6b6 HTTP/1.1
+
+
+### DELETEs ALL documents!
+DELETE http://localhost:3000/allergies/ HTTP/1.1
+

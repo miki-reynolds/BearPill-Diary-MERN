@@ -1,0 +1,79 @@
+POST http://localhost:3000/moods HTTP/1.1
+content-type: application/json
+
+{
+    "mood": "why doesnt it work",
+    "scale": 4,
+    "date": "2023-05-23"
+}
+
+### CREATE 2
+POST http://localhost:3000/moods HTTP/1.1
+content-type: application/json
+
+{
+    "mood": "Disappoint",
+    "scale": 7,
+    "date": "2023-05-23"
+}
+
+### CREATE 3
+POST http://localhost:3000/moods HTTP/1.1
+content-type: application/json
+
+{
+    "mood": "Depressed",
+    "scale": 5,
+    "date": "2023-05-23"
+}
+
+### CREATE 4
+POST http://localhost:3000/moods HTTP/1.1
+content-type: application/json
+
+{
+    "mood": "Stressed",
+    "scale": 10,
+    "date": "2023-05-23"
+}
+
+### CREATE 5
+POST http://localhost:3000/moods HTTP/1.1
+content-type: application/json
+
+{
+    "mood": "ok",
+    "scale": 5,
+    "date": "2023-05-23"
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/moods HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/moods/6473fa7a5f6c90e5ae7d01c8 HTTP/1.1
+
+
+### UPDATE one document's year, by ID.
+### Replace the id in the following request with one that exists
+### and update the title, year, and/or language:
+PUT http://localhost:3000/moods/6473fa7a5f6c90e5ae7d01c8 HTTP/1.1
+content-type: application/json
+
+{
+    "mood": "Sad",
+    "scale": 1,
+    "date": "2023-05-23"
+}
+
+### DELETE by ID (no response provided)
+DELETE http://localhost:3000/moods/647405e2d556a2bb490a9cd0 HTTP/1.1
+
+
+### DELETEs ALL documents!
+DELETE http://localhost:3000/moods/ HTTP/1.1
+
