@@ -1,5 +1,6 @@
 POST http://localhost:3000/moods HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 {
     "mood": "why doesnt it work",
@@ -10,6 +11,7 @@ content-type: application/json
 ### CREATE 2
 POST http://localhost:3000/moods HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 {
     "mood": "Disappoint",
@@ -20,6 +22,7 @@ content-type: application/json
 ### CREATE 3
 POST http://localhost:3000/moods HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 {
     "mood": "Depressed",
@@ -30,6 +33,7 @@ content-type: application/json
 ### CREATE 4
 POST http://localhost:3000/moods HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 {
     "mood": "Stressed",
@@ -40,6 +44,7 @@ content-type: application/json
 ### CREATE 5
 POST http://localhost:3000/moods HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 {
     "mood": "ok",
@@ -50,19 +55,21 @@ content-type: application/json
 
 ### RETRIEVE all documents.
 GET http://localhost:3000/moods HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 
 
 ### RETRIEVE a document by its ID.
-### Replace the following ID with one that exists in the collection.
-GET http://localhost:3000/moods/6473fa7a5f6c90e5ae7d01c8 HTTP/1.1
+GET http://localhost:3000/moods/6476fb9c08388b3c074c31a9 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 
 ### UPDATE one document's year, by ID.
 ### Replace the id in the following request with one that exists
 ### and update the title, year, and/or language:
-PUT http://localhost:3000/moods/6473fa7a5f6c90e5ae7d01c8 HTTP/1.1
+PUT http://localhost:3000/moods/6476fb9c08388b3c074c31a9 HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 {
     "mood": "Sad",
@@ -71,9 +78,11 @@ content-type: application/json
 }
 
 ### DELETE by ID (no response provided)
-DELETE http://localhost:3000/moods/647405e2d556a2bb490a9cd0 HTTP/1.1
+DELETE http://localhost:3000/moods/6476fb9c08388b3c074c31a9 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 
 ### DELETEs ALL documents!
 DELETE http://localhost:3000/moods/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 

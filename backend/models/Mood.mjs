@@ -37,62 +37,63 @@ const moodSchema = mongoose.Schema({
         type: Date,
         required: true,
         default: Date.now
-    }
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+      }
 });
 
 // Compile the model from the schema.
 const Mood = mongoose.model('Mood', moodSchema);
 
 // CREATE model *****************************************
-const createMood = async (mood, scale, date) => {
+const createMood = async (mood, scale, date, userId) => {
     const newMood = new Mood({
         mood: mood,
         scale: scale,
-        date: date
+        date: date,
+        user: userId
     });
     return newMood.save();
 };
 
 // RETRIEVE models *****************************************
 // Retrieve based on a filter and return a promise.
-const retrieveMoods = async () => {
-    const query = Mood.find();
+const retrieveMoods = async (userId) => {
+    const query = Mood.find({ user: userId });;
     return query.exec();
 };
 
 // RETRIEVE by ID
-const retrieveMoodByID = async (_id) => {
-    const query = Mood.findById({ _id: _id });
+const retrieveMoodByID = async (moodId, userId) => {
+    const query = Mood.findOne({ _id: moodId, user: userId });
     return query.exec();
 };
 
 
 // UPDATE model *****************************************************
-const updateMood = async (_id, mood, scale, date) => {
-    const result = await Mood.replaceOne({ _id: _id }, {
-        mood: mood,
-        scale: scale,
-        date: date
-    });
-    return {
-        _id: _id,
-        mood: mood,
-        scale: scale,
-        date: date
-    }
+const updateMood = async (moodId, userId, mood, scale, date) => {
+    const query = Mood.findOneAndUpdate(
+        { _id: moodId, user: userId },
+        { mood, scale, date },
+        { new: true }
+    );
+    // return { moodId, userId, mood, scale, date }
+    return query.exec();
 };
 
 
 // DELETE model based on _id  *****************************************
-const deleteMoodById = async (_id) => {
-    const result = await Mood.deleteOne({_id: _id});
+const deleteMoodById = async (moodId, userId) => {
+    const result = await Mood.deleteOne({ _id: moodId, user: userId });;
     return result.deletedCount;
 };
 
  
 // DELETE model based on _id  *****************************************
-const deleteMoods = async () => {
-    const result = await Mood.deleteMany({});
+const deleteMoods = async (userId) => {
+    const result = await Mood.deleteMany({ user: userId });;
     return result.deletedCount;
 };
 

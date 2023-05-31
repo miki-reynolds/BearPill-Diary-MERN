@@ -1,8 +1,10 @@
 import express from 'express';
+import { passport } from '../config/passport.mjs';
 import * as moods from '../controllers/moodController.mjs';
 
 
 const router = express.Router();
+router.use(passport.authenticate('jwt', { session: false }));
 
 router.post('/', moods.createMood)
 router.get('/', moods.retrieveMoods);

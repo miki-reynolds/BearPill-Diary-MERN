@@ -1,0 +1,84 @@
+POST http://localhost:3000/users HTTP/1.1
+content-type: application/json
+
+{
+    "username": "mi",
+    "email": "panda@gmail.com",
+    "password": "testtest",
+    "role": "user"
+}
+
+### CREATE 2
+POST http://localhost:3000/users HTTP/1.1
+content-type: application/json
+
+{
+    "username": "ki",
+    "email": "simpa@gmail.com",
+    "password": "test",
+    "role": "user"
+}
+
+### CREATE 3
+POST http://localhost:3000/users HTTP/1.1
+content-type: application/json
+
+{
+    "username": "miki",
+    "email": "pandasim@gmail.com",
+    "password": "test",
+    "role": "user"
+}
+
+### CREATE 4
+POST http://localhost:3000/users HTTP/1.1
+content-type: application/json
+
+{
+    "username": "tj",
+    "email": "lala@gmail.com",
+    "password": "test",
+    "role": "user"
+}
+
+### CREATE 5
+POST http://localhost:3000/users HTTP/1.1
+content-type: application/json
+
+{
+    "username": "lalala",
+    "email": "pandasimpa@gmail.com",
+    "password": "test",
+    "role": "user"
+}
+
+### RETRIEVE all documents.
+GET http://localhost:3000/users HTTP/1.1
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/users/6476b800da2f847fb5a5aed0 HTTP/1.1
+
+
+### UPDATE one document's year, by ID.
+### Replace the id in the following request with one that exists
+### and update the title, year, and/or language:
+PUT http://localhost:3000/users/6476b800da2f847fb5a5aed0 HTTP/1.1
+content-type: application/json
+
+{
+    "username": "lalaUpdate",
+    "email": "pandasimpa@gmail.com",
+    "currentPassword": "justUpdate",
+    "newPassword": "justUpdate",
+    "role": "user"
+}
+
+### DELETE by ID (no response provided)
+DELETE http://localhost:3000/users/6476b800da2f847fb5a5aed0 HTTP/1.1
+
+
+### DELETEs ALL documents!
+DELETE http://localhost:3000/users/ HTTP/1.1
+

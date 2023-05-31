@@ -1,6 +1,7 @@
 // Import dependencies.
 import mongoose from 'mongoose';
 import 'dotenv/config';
+import uniqueValidator from 'mongoose-unique-validator';
 import * as logger from '../utils/logger.mjs';
 import { transformSchemaJSON } from '../utils/utils.mjs';
 
@@ -43,60 +44,66 @@ const allergySchema = mongoose.Schema({
         type: Date,
         required: true,
         default: Date.now
-    }
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+      }
 });
 
 // Compile the model from the schema.
 const Allergy = mongoose.model('Allergy', allergySchema);
 
 // CREATE model *****************************************
-const createAllergy = async (name, reactions, notes, current, date) => {
+const createAllergy = async (name, reactions, notes, current, date, userId) => {
     const newAllergy = new Allergy({
-        name, reactions, notes, current, date
+        name, reactions, notes, current, date, user: userId
     });
     return newAllergy.save();
 };
 
 // RETRIEVE models *****************************************
 // Retrieve based on a filter and return a promise.
-const retrieveAllergies = async () => {
-    const query = Allergy.find();
+const retrieveAllergies = async (userId) => {
+    const query = Allergy.find({ user: userId });
     return query.exec();
 };
 
 // RETRIEVE by ID
-const retrieveAllergyByID = async (_id) => {
-    const query = Allergy.findById({ _id: _id });
+const retrieveAllergyByID = async (allergyId, userId) => {
+    const query = Allergy.findOne({ _id: allergyId, user: userId });
     return query.exec();
 };
 
 // UPDATE model *****************************************************
-const updateAllergy = async (_id, name, reactions, notes, current, date) => {
-    const result = await Allergy.replaceOne({ _id: _id }, {
-        name, reactions, notes, current, date
-    });
-    return { 
-        _id: _id,
-        name, reactions, notes, current, date
-    }
-};
+const updateAllergy = async (allergyId, userId, name, reactions, notes, current, date) => {
+    const query = Allergy.findOneAndUpdate(
+        { _id: allergyId, user: userId },
+        { name, reactions, notes, current, date },
+        { new: true }
+    );
+    return query.exec();
+}
 
 // DELETE model based on _id  *****************************************
-const deleteAllergyById = async (_id) => {
-    const result = await Allergy.deleteOne({_id: _id});
+const deleteAllergyById = async (allergyId, userId) => {
+    const result = await Allergy.deleteOne({ _id: allergyId, user: userId });
     return result.deletedCount;
 };
 
 // DELETE model *****************************************
-const deleteAllergies = async () => {
-    const result = await Allergy.deleteMany({});
+const deleteAllergies = async (userId) => {
+    const result = await Allergy.deleteMany({ user: userId });
     return result.deletedCount;
 };
-
 
 // Reformat schema Json representation
 transformSchemaJSON(allergySchema);
   
+allergySchema.plugin(uniqueValidator);
+
 
 // Export our variables for use in the controller file.
-export { createAllergy, retrieveAllergies, retrieveAllergyByID, updateAllergy, deleteAllergyById, deleteAllergies };
+export {
+  createAllergy, retrieveAllergies, retrieveAllergyByID, updateAllergy, deleteAllergyById, deleteAllergies
+};

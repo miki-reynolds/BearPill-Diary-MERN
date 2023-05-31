@@ -1,0 +1,76 @@
+POST http://localhost:3000/auth/sign-up HTTP/1.1
+content-type: application/json
+
+{
+    "username": "mi",
+    "email": "panda@gmail.com",
+    "password": "testtest"
+}
+
+### SIGN-IN 1
+POST http://localhost:3000/auth/sign-in HTTP/1.1
+content-type: application/json
+
+{
+    "identifier": "panda@gmail.com",
+    "password": "testtest"
+}
+
+### CREATE 2
+POST http://localhost:3000/auth/sign-up HTTP/1.1
+content-type: application/json
+
+{
+    "username": "ki",
+    "email": "simpa@gmail.com",
+    "password": "test"
+}
+
+### SIGN-IN 2
+POST http://localhost:3000/auth/sign-in HTTP/1.1
+content-type: application/json
+
+{
+    "identifier": "simpa@gmail.com",
+    "password": "test"
+}
+
+### CREATE 3
+POST http://localhost:3000/auth/sign-up HTTP/1.1
+content-type: application/json
+
+{
+    "username": "miki",
+    "email": "pandasim@gmail.com",
+    "password": "test"
+}
+
+
+### CREATE ADMIN
+POST http://localhost:3000/auth/admin/register HTTP/1.1
+content-type: application/json
+
+{
+    "username": "Miki",
+    "email": "mikiret@gmail.com",
+    "password": "test"
+}
+
+### CREATE 2
+POST http://localhost:3000/auth/admin/register HTTP/1.1
+content-type: application/json
+
+{
+    "username": "ki",
+    "email": "simpa@gmail.com",
+    "password": "test",
+    "role": "admin"
+}
+
+
+### DELETEs ALL USER documents!
+DELETE http://localhost:3000/users/ HTTP/1.1
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/users HTTP/1.1

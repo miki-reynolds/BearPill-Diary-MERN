@@ -1,16 +1,21 @@
 POST http://localhost:3000/measurements HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzcwYmFlNmRmYTRmODEwNzMzMWNiYSIsImlhdCI6MTY4NTUyMzM3NX0.UTo1rZrEyYQT_w341uDB_wj7S_svHRpXv8Eh99Lb1mM
 
 {
-    "name": "BS",
-    "number": 90,
-    "date": "05-23-2023",
-    "single": true
+  "type": "single",
+  "name": "BS",
+  "number": 90,
+  "upperNumber": null,
+  "lowerNumber": null,
+  "date": "05-23-2023"
 }
+
 
 ### CREATE 2
 POST http://localhost:3000/measurements HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzcwYmFlNmRmYTRmODEwNzMzMWNiYSIsImlhdCI6MTY4NTUyMzM3NX0.UTo1rZrEyYQT_w341uDB_wj7S_svHRpXv8Eh99Lb1mM
 
 {
     "name": "BP",
@@ -24,6 +29,7 @@ content-type: application/json
 ### CREATE 3
 POST http://localhost:3000/measurements HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzcwYmFlNmRmYTRmODEwNzMzMWNiYSIsImlhdCI6MTY4NTUyMzM3NX0.UTo1rZrEyYQT_w341uDB_wj7S_svHRpXv8Eh99Lb1mM
 
 {
     "name": "DoubleNum",
@@ -36,6 +42,7 @@ content-type: application/json
 ### CREATE 4
 POST http://localhost:3000/measurements HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzcwYmFlNmRmYTRmODEwNzMzMWNiYSIsImlhdCI6MTY4NTUyMzM3NX0.UTo1rZrEyYQT_w341uDB_wj7S_svHRpXv8Eh99Lb1mM
 
 {
     "name": "SingleNum",
@@ -47,6 +54,7 @@ content-type: application/json
 ### CREATE 5
 POST http://localhost:3000/measurements HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzcwYmFlNmRmYTRmODEwNzMzMWNiYSIsImlhdCI6MTY4NTUyMzM3NX0.UTo1rZrEyYQT_w341uDB_wj7S_svHRpXv8Eh99Lb1mM
 
 {
     "name": "DoubleNum 2",
@@ -58,31 +66,30 @@ content-type: application/json
 
 ### RETRIEVE all documents.
 GET http://localhost:3000/measurements HTTP/1.1
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzcwYmFlNmRmYTRmODEwNzMzMWNiYSIsImlhdCI6MTY4NTUyMzM3NX0.UTo1rZrEyYQT_w341uDB_wj7S_svHRpXv8Eh99Lb1mM
 
 ### RETRIEVE a document by its ID.
-### Replace the following ID with one that exists in the collection.
-GET http://localhost:3000/measurements/6474596398b6f3c29e147df6 HTTP/1.1
-
+GET http://localhost:3000/measurements/6477100a97b2191491c2393c HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzcwYmFlNmRmYTRmODEwNzMzMWNiYSIsImlhdCI6MTY4NTUyMzM3NX0.UTo1rZrEyYQT_w341uDB_wj7S_svHRpXv8Eh99Lb1mM
 
 ### UPDATE one document's year, by ID.
-### Replace the id in the following request with one that exists
-### and update the title, year, and/or language:
-PUT http://localhost:3000/measurements/6474596398b6f3c29e147df6 HTTP/1.1
+PUT http://localhost:3000/measurements/6477100a97b2191491c2393c HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzcwYmFlNmRmYTRmODEwNzMzMWNiYSIsImlhdCI6MTY4NTUyMzM3NX0.UTo1rZrEyYQT_w341uDB_wj7S_svHRpXv8Eh99Lb1mM
 
 {
-    "name": "DoubleNum 333",
-    "upperNumber": 110,
-    "lowerNumber": 60,
-    "date": "05-23-2023",
-    "single": false
+  "name": "BS",
+  "number": 1000,
+  "upperNumber": null,
+  "lowerNumber": null,
+  "date": "05-23-2023"
 }
 
-### DELETE by ID (no response provided)
-DELETE http://localhost:3000/measurements/6474596398b6f3c29e147df6 HTTP/1.1
 
+### DELETE by ID (no response provided)
+DELETE http://localhost:3000/measurements/6477100a97b2191491c2393c HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzcwYmFlNmRmYTRmODEwNzMzMWNiYSIsImlhdCI6MTY4NTUyMzM3NX0.UTo1rZrEyYQT_w341uDB_wj7S_svHRpXv8Eh99Lb1mM
 
 ### DELETEs ALL documents!
 DELETE http://localhost:3000/measurements/ HTTP/1.1
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzcwYmFlNmRmYTRmODEwNzMzMWNiYSIsImlhdCI6MTY4NTUyMzM3NX0.UTo1rZrEyYQT_w341uDB_wj7S_svHRpXv8Eh99Lb1mM

@@ -1,5 +1,6 @@
 POST http://localhost:3000/allergies HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNTUwNX0.PSy1ZxJ_ileH4dpC4x_R4OYm9r96FypHD7qsnqqWR1A
 
 {
     "name": "ibuprofen",
@@ -12,6 +13,7 @@ content-type: application/json
 ### CREATE 2
 POST http://localhost:3000/allergies HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNTUwNX0.PSy1ZxJ_ileH4dpC4x_R4OYm9r96FypHD7qsnqqWR1A
 
 {
     "name": "tylenol",
@@ -24,6 +26,7 @@ content-type: application/json
 ### CREATE 3
 POST http://localhost:3000/allergies HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNTUwNX0.PSy1ZxJ_ileH4dpC4x_R4OYm9r96FypHD7qsnqqWR1A
 
 {
     "name": "zinc",
@@ -36,6 +39,7 @@ content-type: application/json
 ### CREATE 4
 POST http://localhost:3000/allergies HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNTUwNX0.PSy1ZxJ_ileH4dpC4x_R4OYm9r96FypHD7qsnqqWR1A
 
 {
     "name": "forgot name",
@@ -48,6 +52,7 @@ content-type: application/json
 ### CREATE 5
 POST http://localhost:3000/allergies HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNTUwNX0.PSy1ZxJ_ileH4dpC4x_R4OYm9r96FypHD7qsnqqWR1A
 
 {
     "name": "sleep med",
@@ -60,21 +65,22 @@ content-type: application/json
 
 ### RETRIEVE all documents.
 GET http://localhost:3000/allergies HTTP/1.1
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNTUwNX0.PSy1ZxJ_ileH4dpC4x_R4OYm9r96FypHD7qsnqqWR1A
 
 ### RETRIEVE a document by its ID.
-### Replace the following ID with one that exists in the collection.
-GET http://localhost:3000/allergies/64745d34e23646650300195a HTTP/1.1
-
+GET http://localhost:3000/allergies/6476f67e83133f857fceb685 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNTUwNX0.PSy1ZxJ_ileH4dpC4x_R4OYm9r96FypHD7qsnqqWR1A
 
 ### UPDATE one document's year, by ID.
 ### Replace the id in the following request with one that exists
 ### and update the title, year, and/or language:
-PUT http://localhost:3000/allergies/64745d34e23646650300195a HTTP/1.1
+PUT http://localhost:3000/allergies/6476f67e83133f857fceb685 HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNTUwNX0.PSy1ZxJ_ileH4dpC4x_R4OYm9r96FypHD7qsnqqWR1A
 
 {
-    "name": "sleep med",
+    "allergyId": "6476f67e83133f857fceb685", 
+    "name": "lala",
     "reactions": "Stomachace",
     "notes": "",
     "current": false,
@@ -82,9 +88,11 @@ content-type: application/json
 }
 
 ### DELETE by ID (no response provided)
-DELETE http://localhost:3000/allergies/64743164cbe67f9f2627d6b6 HTTP/1.1
+DELETE http://localhost:3000/allergies/6476f67e83133f857fceb685 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNTUwNX0.PSy1ZxJ_ileH4dpC4x_R4OYm9r96FypHD7qsnqqWR1A
 
 
 ### DELETEs ALL documents!
 DELETE http://localhost:3000/allergies/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNTUwNX0.PSy1ZxJ_ileH4dpC4x_R4OYm9r96FypHD7qsnqqWR1A
 

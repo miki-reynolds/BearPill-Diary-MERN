@@ -1,5 +1,6 @@
 POST http://localhost:3000/medications HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 {
     "name": "ibuprofen",
@@ -14,6 +15,7 @@ content-type: application/json
 ### CREATE 2
 POST http://localhost:3000/medications HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 {
     "name": "tylenol",
@@ -28,6 +30,7 @@ content-type: application/json
 ### CREATE 3
 POST http://localhost:3000/medications HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 {
     "name": "zinc",
@@ -42,6 +45,7 @@ content-type: application/json
 ### CREATE 4
 POST http://localhost:3000/medications HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 {
     "name": "forgot name",
@@ -56,6 +60,7 @@ content-type: application/json
 ### CREATE 5
 POST http://localhost:3000/medications HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 {
     "name": "sleep med",
@@ -70,21 +75,24 @@ content-type: application/json
 
 ### RETRIEVE all documents.
 GET http://localhost:3000/medications HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 
 ### RETRIEVE a document by its ID.
 ### Replace the following ID with one that exists in the collection.
-GET http://localhost:3000/medications/64742c45797fb4f9a53835b3 HTTP/1.1
+GET http://localhost:3000/medications/6476fb1ba69aceca8debc73d HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 
 ### UPDATE one document's year, by ID.
 ### Replace the id in the following request with one that exists
 ### and update the title, year, and/or language:
-PUT http://localhost:3000/medications/64742c45797fb4f9a53835b3 HTTP/1.1
+PUT http://localhost:3000/medications/6476fb1ba69aceca8debc73d HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 {
-    "name": "ibuprofen",
+    "name": "lalal",
     "dosage": 600,
     "unit": "mg",
     "instructions": "as needed, max 2times/day",
@@ -94,9 +102,11 @@ content-type: application/json
 }
 
 ### DELETE by ID (no response provided)
-DELETE http://localhost:3000/medications/64742c45797fb4f9a53835b3 HTTP/1.1
+DELETE http://localhost:3000/medications/6476fb1ba69aceca8debc73d HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
 
 ### DELETEs ALL documents!
 DELETE http://localhost:3000/medications/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlY2VmOTg5NDcxM2YyZmNjNGRmNCIsImlhdCI6MTY4NTUxNzMwN30.AoWZHg78qqHDrUMdXa99RdL1GR8OAEUOLz9GITXkv6s
 
